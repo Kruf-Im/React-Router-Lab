@@ -1,0 +1,53 @@
+{
+    "Lists":[
+        {
+            "listId":"0",
+            "listTitle":"Monday tasks",
+            "tasks":[
+                 {
+                    "taskId":"0",
+                    "taskSummary":"Brush my teeth.",
+                    "taskDescription":"",
+                    "done":true
+                },
+                {
+                    "taskId":"1",
+                    "taskSummary":"Take out the trash.",
+                    "taskDescription":"",
+                    "done":false
+                },  
+                {
+                    "taskId":"2",
+                    "taskSummary":"Go for a walk.",
+                    "taskDescription":"Go outside and maybe buy something at the shop.",
+                    "done":false
+                },
+                {
+                    "taskId":"3",
+                    "taskSummary":"Do my homework.",
+                    "taskDescription":"Do homework for 2 subjects.",
+                    "done":false
+                }
+               
+            ]
+        },
+        {
+            "listId":"1",
+            "listTitle":"Tuesday tasks",
+            "tasks":[
+                {
+                    "taskId":"0",
+                    "taskSummary":"Brush my teeth.",
+                    "taskDescription":"",
+                    "done":false
+                },  
+                {
+                    "taskId":"1",
+                    "taskSummary":"Go to gym.",
+                    "taskDescription":"Leg day.",
+                    "done":false
+                }
+            ]
+        }
+    ]
+}

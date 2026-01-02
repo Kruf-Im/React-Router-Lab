@@ -1,0 +1,24 @@
+.AdminArea {
+    grid-area: main;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    text-align: center;
+}
+.exitButton{
+    background: #1d1d1d;
+    color: #ffffff;
+    border: none;
+    padding: 0.8rem 2rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 0.8rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+.exitButton:hover{
+    border-radius: 0.3rem;
+    background-color: #353535;
+}

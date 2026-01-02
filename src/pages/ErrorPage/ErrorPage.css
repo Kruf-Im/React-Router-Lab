@@ -1,0 +1,36 @@
+.ErrorPage{
+    grid-area: main;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+.errorTitle{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: 600;
+    font-size: 2rem;
+    color: #FF0000;
+}
+.errorDescription {
+    font-size: 1.1rem;
+    color: #ccc;
+    line-height: 1.5;
+    margin-bottom: 25px;
+}
+.ErrorPage nav a {
+    text-decoration: none;
+    display: inline-block;
+    color: #888;
+    font-weight: 500;
+    transition: 0.3s;
+    margin-top: 1rem;
+    padding: 10px 25px;
+    border-radius: 10px;
+}
+
+.ErrorPage nav a:hover {
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.1);
+}

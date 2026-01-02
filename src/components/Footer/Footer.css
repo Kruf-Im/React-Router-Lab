@@ -1,0 +1,14 @@
+.Footer{
+    grid-area: footer;
+    background: #030303;
+    border-top: 1px #1d1d1d solid;
+    padding: 2px;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+.Footer p{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
