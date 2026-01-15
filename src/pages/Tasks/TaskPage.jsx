@@ -6,17 +6,14 @@ function TaskPage(){
     return(
         <div className="TaskPage">
             <div className={`Task`}>
-                <span className="TaskNumber">Task №{Number(task.taskId) + 1}</span>
-                <h1>{task.taskSummary}</h1>
-                <p className="TaskDescription">
-                    {task.taskDescription || "No description provided."}
-                </p>
-                <div className={`TaskStatus ${task.done ? 'Done' : 'NotDone'}`}>
-                    {task.done ? "Done" : "Not Done"}
+                <span className="TaskNumber">Task №{Number(task.id)}</span>
+                <h1>{task.title}</h1>
+                <div className={`TaskStatus ${task.completed ? 'Done' : 'NotDone'}`}>
+                    {task.completed ? "Done" : "Not Done"}
                 </div>
             </div>
             <nav>
-                <Link to='/lists'>Return to list</Link>
+                <Link to={`/lists/${task.userId}`}>Return to list</Link>
             </nav>
         </div>
     );

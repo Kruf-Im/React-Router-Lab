@@ -1,15 +1,20 @@
 import './Lists.css'
-import {Link} from 'react-router-dom';
+import {Link, useLoaderData} from 'react-router-dom';
+import SearchForm from '../../components/SearchForm/SearchForm';
 function Lists(){
+    const todoLists = useLoaderData();
+    const users = [... new Set(todoLists.map(todo => todo.userId))];
     return(
         <div className='Lists'>
-            <h1 className='title'>
-                My Task-Lists
-            </h1>
+            <h1 className='title'>Todos</h1>
             <ul>
-                <li><Link to='/lists/0'>Monday</Link></li>
-                <li><Link to='/lists/1'>Tuesday</Link></li>
-                <li><Link to='/lists/2'>Wednesday</Link></li>
+                {
+                    users.map((userId)=>(
+                        <li key={userId}>
+                            <Link to={`/lists/${userId}`}>List #{userId}</Link>
+                        </li>
+                    ))
+                }
             </ul>
         </div>
     );

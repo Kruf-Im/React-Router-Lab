@@ -1,0 +1,24 @@
+.overlay {
+    position: fixed;
+    width: 100%;
+    height:100%;
+    pointer-events: none;
+}
+
+.upperBar {
+    width: 100%;
+    height:3.5rem;
+    background-color: #8b0000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 15px rgba(255, 0, 0, 0.4);
+}
+
+.loaderText {
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+}

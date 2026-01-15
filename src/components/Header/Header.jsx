@@ -1,4 +1,5 @@
 import './Header.css';
+import SearchForm from '../SearchForm/SearchForm';
 import {Link, NavLink} from 'react-router-dom';
 
 function Header(){
@@ -10,6 +11,7 @@ function Header(){
                 <NavLink to="/lists">Task-Lists</NavLink>
             </nav>
             <div className='verticalLine'></div>
+            <SearchForm></SearchForm>
         </div>
     );
 }
