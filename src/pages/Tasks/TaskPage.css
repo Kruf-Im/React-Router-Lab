@@ -38,6 +38,8 @@
     display: inline-block;
     font-weight: bold;
     margin-bottom: 20px;
+    cursor: pointer;
+    user-select: none;
 }
 .Done {
     background-color: rgba(30, 255, 0, 0.2); 

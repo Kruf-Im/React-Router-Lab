@@ -1,6 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import {createBrowserRouter, createRoutesFromElements, Route, RouterProvider} from 'react-router-dom'
+import {store} from './store/store'
 import './index.css'
 
 import Root from './components/Root'
@@ -10,7 +11,9 @@ import About from './pages/About/About'
 import Lists from './pages/Lists/Lists'
 import List from './pages/Lists/List'
 import TaskPage from './pages/Tasks/TaskPage'
-import AdminArea from './components/AdminArea/AdminArea'
+import AdminArea from './pages/AdminArea/AdminArea'
+import { Provider } from 'react-redux'
+import Bin from './pages/Bin/Bin'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -21,6 +24,7 @@ const router = createBrowserRouter(
       <Route path='/lists' loader={listLoader} element={<Lists/>}/>
       <Route path='/lists/:listId' loader={listLoader} element={<List/>}/>
       <Route path='/lists/:listId/task/:taskId' loader={detailsLoader} element={<TaskPage/>}/>
+      <Route path='/bin' element={<Bin/>}/>
       <Route path='*' element={<ErrorPage />} />
     </Route>
   )
@@ -28,30 +32,30 @@ const router = createBrowserRouter(
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router}/>
+    <Provider store={store}>
+      <RouterProvider router={router}/>
+    </Provider>
   </StrictMode>
 )
 async function listLoader({params, request}){
     const url = new URL(request.url);
     const query = url.searchParams.get("query") || "";
     let apiURL = 'https://jsonplaceholder.typicode.com/todos';
-    if (params.listId) {
-      apiURL += `?userId=${params.listId}`;
+    
+    if (query){
+      apiURL += `?title_like=${query}`
     }
-
     const response = await fetch(apiURL);
     if(!response.ok){
       throw new Error("Error loading API", {status: response.status});
     }
     let todoLists = await response.json();
-    if(query){
-      todoLists = todoLists.filter(todo => todo.title.toLowerCase().includes(query.toLowerCase()));
-    }
-    
+        
     if(params.listId){
+      const userTasks = todoLists.filter(task => task.userId === Number(params.listId))
       return {
         userId: params.listId,
-        tasks: todoLists
+        tasks: userTasks
       };
     }
     return todoLists;

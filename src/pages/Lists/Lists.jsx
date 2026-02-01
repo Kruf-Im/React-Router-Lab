@@ -7,15 +7,20 @@ function Lists(){
     return(
         <div className='Lists'>
             <h1 className='title'>Todos</h1>
-            <ul>
-                {
-                    users.map((userId)=>(
-                        <li key={userId}>
-                            <Link to={`/lists/${userId}`}>List #{userId}</Link>
-                        </li>
-                    ))
-                }
-            </ul>
+            <div style={{width:'100%', height:'4rem'}}>
+                <SearchForm></SearchForm>
+            </div>
+            <div className='list'>
+                <ul>
+                    {
+                        users.map((userId)=>(
+                            <li key={userId}>
+                                <Link to={`/lists/${userId}`}>List #{userId}</Link>
+                            </li>
+                        ))
+                    }
+                </ul>
+            </div>
         </div>
     );
 }

@@ -1,13 +1,20 @@
 .search {
     position: relative;
     width: 100%;
-    max-width: 600px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.search form {
+    width: 100%;
+    height: 100%;
     display: flex;
     align-items: center;
 }
 .searchInput {
     width: 100%;
-    padding: 12px 20px 12px 50px;
+    height: 100%;
+    padding: 0px 20px 0px 50px;
     font-size: 1.2rem;
     background-color: #70707050;
     border: 1px solid #4d5359;
@@ -15,7 +22,9 @@
     color: #979b9e;
     outline: none;
     transition: background-color 0.2s;
+    box-sizing: border-box;
 }
+
 .searchInput:focus {
     background-color: #0303032a;
     color: white;

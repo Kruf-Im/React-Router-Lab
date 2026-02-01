@@ -1,0 +1,82 @@
+.Header{
+    grid-area: head;
+    height:3.5rem;
+    display: flex;
+    align-items: center;
+    padding-left: 0.75rem;
+    transition: 0.3s ease;
+}
+.container.light .Header{
+    background: #e0e0e0;
+    border-bottom: 0.185em #000000 solid;
+}
+.container.dark .Header{
+    background: #030303;
+    border-bottom: 0.185em #1d1d1d solid;
+}
+
+.Header nav{
+    display: flex;
+    gap: 0.25rem;
+}
+
+.Header nav a {
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 10px 20px;
+    width: 5rem;
+    display: inline-block;
+    text-align: center;
+    border: 0.185rem solid transparent;
+    border-radius: 1rem;
+    transition: 0.3s ease;
+}
+.container.light .Header nav a {
+    color: #333333;
+}
+.container.dark .Header nav a {
+    color: #ffffff;
+}
+
+.container.dark .Header nav a:hover {
+    background-color: #353535;
+}
+.container.light .Header nav a:hover {
+    background-color: #b4b4b4;
+}
+
+.container.dark .Header nav a.active {
+    background-color: #1d1d1d;
+    border-radius: 0.6rem;
+}
+.container.light .Header nav a.active {
+    background-color: #7e7e7e;
+    border-radius: 0.6rem;
+}
+.verticalLine{
+    border-left: 0.1rem solid #1d1d1d;
+    height: 65%;
+    margin: 0 1rem;
+}
+.themeContainer{
+    margin-left: auto;
+    margin-right: 1rem;
+}
+.themeSwitch{
+    background: #70707050;
+    border: 1px solid #4d5359;
+    border-radius: 8px;
+    padding: 6px 12px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.2s;
+}
+.container.dark .themeSwitch{
+    color: #fff;
+}
+.container.light .themeSwitch{
+    color: #333;
+    border-color: #ccc;
+}

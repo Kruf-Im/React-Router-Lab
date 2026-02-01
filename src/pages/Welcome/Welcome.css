@@ -10,6 +10,12 @@
     font-weight: 600;
     font-size: 2rem;
     display: flex;
-    color: #ffffff;
     user-select: none;
+    transition: 0.3s ease;
+}
+.container.light .title{
+    color: #000000;
+}
+.container.dark .title{
+    color: #ffffff;
 }

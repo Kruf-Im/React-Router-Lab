@@ -15,15 +15,13 @@ function SearchForm(){
         }
     };
     return(
-        <div>
-            <div className="search">
-                <form onSubmit={onSubmit}>
-                    <button type="submit" className="searchIconButton" aria-label="Search">
-                        <MagnifyingGlassIcon size={24} />
-                    </button>
-                    <input type="text" className="searchInput" placeholder="Search tasks by title" value={query} onChange={(e)=> setQuery(e.target.value)}/>
-                </form>
-            </div>
+        <div className="search">
+            <form onSubmit={onSubmit}>
+                <button type="submit" className="searchIconButton" aria-label="Search">
+                    <MagnifyingGlassIcon size={24} />
+                </button>
+                <input type="text" className="searchInput" placeholder="Search tasks by title" value={query} onChange={(e)=> setQuery(e.target.value)}/>
+            </form>
         </div>
     );
 }

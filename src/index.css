@@ -5,11 +5,7 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background: radial-gradient(circle at 0% 0%, #09021b 0%, transparent 25%),
-    radial-gradient(circle at 100% 0%, #09021b 0%, transparent 25%),
-    radial-gradient(circle at 50% 125%, #1b0202 0%, transparent 50%);
-  background-color: #030303;
+  
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -33,4 +29,19 @@ body {
         "head"
         "main"
         "footer";
+    transition: 0.3s ease;
+}
+.container.dark{
+  color: rgba(255, 255, 255, 0.87);
+  background: radial-gradient(circle at 0% 0%, #09021b 0%, transparent 25%),
+    radial-gradient(circle at 100% 0%, #09021b 0%, transparent 25%),
+    radial-gradient(circle at 50% 125%, #1b0202 0%, transparent 50%);
+  background-color: #030303;
+}
+.container.light{
+  color: rgba(0, 0, 0, 0.87);
+  background: radial-gradient(circle at 0% 0%, #f2edff 0%, transparent 25%),
+    radial-gradient(circle at 100% 0%, #d2cce2 0%, transparent 25%),
+    radial-gradient(circle at 50% 125%, #ffe8e8 0%, transparent 50%);
+  background-color: #ffffff;
 }

@@ -1,0 +1,23 @@
+.Footer{
+    grid-area: footer;
+    padding: 2px;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    transition: 0.3s ease;
+}
+.container.dark .Footer{
+    background: #030303;
+    border-top: 1px #1d1d1d solid;
+    color: #ffffff;
+}
+.container.light .Footer{
+    background: #c5c5c5;
+    border-top: 1px #000000 solid;
+    color: #000000;
+}
+.Footer p{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+}

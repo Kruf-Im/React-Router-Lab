@@ -10,17 +10,25 @@
 .List nav a {
     text-decoration: none;
     display: inline-block;
-    color: #888686;
     font-weight: 500;
     transition: 0.3s;
     margin-top: 1rem;
     padding: 10px 25px;
     border-radius: 10px;
+    transition: 0.3s ease;
+}
+.container.light .List nav a {
+    color: #000000;
+}
+.container.dark .List nav a {
+    color: #ffffff;
 }
 
-.List nav a:hover {
-    color: #ffffff;
+.container.dark .List nav a:hover {
     background-color: rgba(255, 255, 255, 0.1);
+}
+.container.light .List nav a:hover {
+    background-color: rgba(0, 0, 0, 0.13);
 }
 .List ul{
     background-color: #222121;
@@ -33,6 +41,9 @@
     background: #353535;
     text-align: left;
     user-select: none;
+    display: flex;
+    align-items: center;
+    padding-right: 0.2rem;
 }
 .List ul li:nth-child(odd){
     background: #2b2a2a;
@@ -44,12 +55,13 @@
     padding: 0.2rem 3rem;
     display: inline-block;
     font-size: 1.35rem;
-    color: #ffffff;
 
+}
+.List ul li.checked a {
+  text-decoration: line-through;
 }
 .List ul li.checked {
   background: #08c988c7;
-  text-decoration: line-through;
 }
 .List ul li.checked::before {
   content: '';
@@ -62,4 +74,94 @@
   transform: rotate(45deg);
   height: 1rem;
   width: 0.5rem;
+}
+.List ul li.checked .right {
+    text-decoration: none;
+    display: inline-flex;
+}
+.right{
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    text-decoration: none; 
+}
+.right.delete{
+    background-color: #830000;
+    border: none;
+    width: 2rem;
+    height: 2rem;
+}
+.right.restore{
+    background-color: #2bb800;
+    border: none;
+    width: 2rem;
+    height: 2rem;
+}
+.right:hover {
+    transform: scale(1.1);
+}
+.right.delete:hover {
+    background-color: #ff0000;
+    box-shadow: 0 0 10px rgba(131, 0, 0, 0.5);
+}
+.right.restore:hover {
+    background-color: #00ac09;
+    box-shadow: 0 0 10px rgba(0, 131, 0, 0.5);
+}
+.right:active {
+    transform: scale(0.95);
+}
+
+
+.filterButtons {
+    display: flex;
+    gap: 10px;
+    margin: 1.5rem 0;
+    padding: 5px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+}
+
+.filterButtons button {
+    padding: 8px 18px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: transparent;
+}
+
+
+.container.dark .filterButtons button {
+    color: #979b9e;
+}
+
+.container.dark .filterButtons button:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
+}
+
+.container.dark .filterButtons button.active {
+    background: #1d1d1d;
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+
+.container.light .filterButtons button {
+    color: #555;
+}
+
+.container.light .filterButtons button:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.container.light .filterButtons button.active {
+    background: #7e7e7e;
+    color: #fff;
 }
